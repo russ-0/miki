@@ -1,22 +1,15 @@
 [package]
-name = "server"
+name = "miki-srv"
 version = "0.1.0"
 authors = ["russ-0 <alexander.pogodin@gmail.com>"]
 edition = "2018"
 
 [dependencies]
-mio = "0.6.19"
-priority-queue = "0.7.0"
+ws = "0.9.1"
+rocket = "0.4.5"
 chrono = "0.4.10"
 
-[lib]
-name = "chatlib"
-path = "src/lib/chatlib.rs"
-
-[[bin]]
-name = "client"
-path = "src/client.rs"
-
-[[bin]]
-name = "server"
-path = "src/server.rs"
+[dependencies.rocket_contrib]
+version = "0.4.5"
+default-features = false
+features = ["handlebars_templates", "tera_templates"]
